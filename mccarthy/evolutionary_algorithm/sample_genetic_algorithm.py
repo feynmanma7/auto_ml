@@ -124,8 +124,8 @@ if __name__ == "__main__":
 
 		for person in population:
 			child = crossover(person=person,
-							  population=pop_copy,
-							  crossover_rate=crossover_rate)
+				population=pop_copy,
+				crossover_rate=crossover_rate)
 			child = mutate(child=child, mutation_rate=mutation_rate)
 			person[:] = child # for iteration
 
