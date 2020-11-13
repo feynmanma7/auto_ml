@@ -90,7 +90,7 @@ if __name__ == "__main__":
 
 	# === Init population, random init.
 	population = np.random.randint(low=0, high=2,
-								   size=(population_size, dna_size))
+				size=(population_size, dna_size))
 
 	func = func_1
 
