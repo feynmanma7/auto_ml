@@ -100,9 +100,8 @@ if __name__ == "__main__":
 	best_iter = None
 
 	for iter in range(n_generation):
-
 		inputs = encoding_dna(population=population, dna_size=dna_size,
-							  x_low=x_low, x_high=x_high)
+				x_low=x_low, x_high=x_high)
 
 		f_values = func(inputs)
 		fitness = get_fitness(values=f_values)
@@ -118,10 +117,8 @@ if __name__ == "__main__":
 			min_f = cur_min_f
 			best_iter = iter
 
-		#print(iter, cur_best_idx, cur_max_fitness_value, cur_min_x, cur_min_f, max_fitness_value)
-
 		population = select(population=population,
-							fitness=fitness)
+				fitness=fitness)
 
 		pop_copy = population.copy()
 
@@ -130,9 +127,7 @@ if __name__ == "__main__":
 							  population=pop_copy,
 							  crossover_rate=crossover_rate)
 			child = mutate(child=child, mutation_rate=mutation_rate)
-
-			# for iteration
-			person[:] = child
+			person[:] = child # for iteration
 
 	print("Best_iter=%d, min_x=%.4f, min_f=%.4f, max_fitness_value=%.4f" %
 		  (best_iter, min_x, min_f, max_fitness_value))
